@@ -5,6 +5,7 @@
   </a>
   {% endfor %}
   {% assign filename = page.url | replace: '.html', '' | replace: '/', '' %}
-  {% if filename == "index" %} {% assign filename = 'home' %} {% endif %}
+  {% if filename == "index" or filename == "" %} {% assign filename = 'home' %} {% endif %}
   <div class="animation start-{{ filename }}"></div>
+
 </nav>
