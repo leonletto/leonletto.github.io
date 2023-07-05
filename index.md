@@ -4,7 +4,7 @@ title: Home
 ---
 # Home
 
-I'm Leon and I lke to write little utilities to help people with tasks related to REST API's and other things.  
+I'm Leon and I like to write little utilities to help people with tasks related to REST API's and other things.  
 
 I work at VMware and I'm a member of the Workspace ONE team.
 
