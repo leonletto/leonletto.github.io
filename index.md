@@ -10,7 +10,7 @@ I work at VMware and I'm a member of the Workspace ONE team.
 
 ## Projects
 
-### [littlehomelab.casa](https://leonletto.github.io/littlehomelab)
+### [littlehomelab](https://leonletto.github.io/littlehomelab)
 
 A collection of Tutorials for setting up a home lab for learning and testing Kubernetes, Docker, and other technologies.
 
