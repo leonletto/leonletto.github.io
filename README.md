@@ -1,7 +1,10 @@
----
-layout: default
-title: Home
----
+[//]: # (---)
+
+[//]: # (layout: default)
+
+[//]: # (title: Home)
+
+[//]: # (---)
 
 leonletto.github.io
 ===================
