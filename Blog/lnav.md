@@ -1,6 +1,6 @@
 ---
 layout: default
-title: LNAV
+title: Using LNAV to troubleshoot devices in Workspace ONE
 ---
 # using LNAV
 
