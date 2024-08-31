@@ -1,0 +1,58 @@
+{
+    "macHubLogs" : {
+        "title" : "WSOne Mac Hub Log",
+        "description" : "WSOne Mac Hub Log",
+        "url" : "http://example.com/log-format.html",
+        "regex" : {
+            "basic" : {
+                "pattern" : "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}-\\d{4})\\s+(?<level>\\w+)\\s+(?<pid>\\d+)\\s+(?<process>\\w+:)\\s+\\[(?<subsystem>[^:]+):(?<category>\\w+)\\]\\s+(?<body>.*)$"
+            }
+        },
+        "timestamp-format" : ["%Y-%d-%m %H:%M:%S-%Z"],
+        "timestamp-field": "timestamp",
+        "body-field" : "body",
+        "module-field": "process",
+        "level-field" : "level",
+        "level" : {
+            "default" : "Default",
+            "error" : "Error",
+            "warning" : "Warning"
+        },
+      "convert-to-local-time" : true,
+        "sample" : [
+            {
+		    "line": "2022-22-10 16:55:40-0700    Default   85       hubd: [com.apple.network:boringssl] boringssl_context_certificate_verify_callback(1793) [C36.1:2][0x144f3beb0] Certificate verification result: OK"
+	    },
+	    {
+            "line" : "2022-22-10 16:44:36-0700    Default   1695     IntelligentHubAgent: [com.vmware.hub.uem:XPC] XPC: Agent received data from Optional(hubd)."
+	    }
+        ]
+    },
+     "macManagedSoftwareUpdateLogs" : {
+        "title" : "WSOne Mac Hub Log",
+        "description" : "WSOne Mac Hub Log",
+        "url" : "http://example.com/log-format.html",
+        "regex" : {
+            "basic" : {
+                "pattern" : "^(?<timestamp>\\w{3} \\d{2} \\d{4} \\d{2}:\\d{2}:\\d{2} -\\d{4})\\s+(?<level>\\w+:){0,1}\\s+(?<body>.*)$"
+            }
+        },
+        "timestamp-field": "timestamp",
+        "timestamp-format" : ["%b %d %Y %H:%M:%S -%Z"],
+        "body-field" : "body",
+        "level-field" : "level",
+        "level" : {
+            "error" : "ERROR",
+            "warning" : "WARNING"
+        },
+      "convert-to-local-time" : true,
+        "sample" : [
+            {
+		    "line": "Oct 26 2022 14:40:15 -0700 WARNING: Manifest /Library/Application Support/AirWatch/Data/Munki/Managed Installs/manifests/device_manifest.plist has no catalogs"
+	    },
+	    {
+            "line" : "Oct 26 2022 14:40:19 -0700     Getting manifest device_manifest.plist..."
+	    }
+        ]
+    }
+}

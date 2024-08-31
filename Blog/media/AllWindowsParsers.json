@@ -1,0 +1,146 @@
+{
+  "$schema": "https://lnav.org/schemas/format-v1.schema.json",
+  "AgentLogs": {
+    "title": "WSOne Agent Log Format",
+    "description": "WSOne Agent Log Format",
+    "url": "https://docs.lnav.org/en/latest/formats.html#format-file-reference",
+    "file-pattern": ".*\\.log$",
+    "file-type": "json",
+    "level-field": "@l",
+    "timestamp-field": "@t",
+    "timestamp-format": ["%Y-%m-%dT%H:%M:%S.%f%Z"],
+    "body-field": "@mt",
+    "module-field": "SourceContext",
+    "level": {
+      "error": "Error",
+      "warning": "Warning",
+      "info": "Info",
+      "debug": "Debug",
+      "trace": "Trace"
+    },
+    "value": {
+      "@t": {
+        "kind": "string"
+      },
+      "@mt": {
+        "kind": "string"
+      },
+      "@l": {
+        "kind": "string"
+      },
+      "SourceContext": {
+        "kind": "string"
+      },
+      "ThreadId": {
+        "kind": "integer"
+      },
+      "ProcessId": {
+        "kind": "integer"
+      },
+      "ProcessName": {
+        "kind": "string"
+      },
+      "MachineName": {
+        "kind": "string"
+      },
+      "EnvironmentName": {
+        "kind": "string"
+      },
+      "EnvironmentUserName": {
+        "kind": "string"
+      }
+    },
+    "sample": [
+      {
+        "line": "{\"@t\":\"2022-10-22T18:12:50.8376183Z\",\"@mt\":\"Sending user IPC message: {messageType}, operation: {userOperation}\",\"messageType\":\"UserOperation\",\"userOperation\":\"GetCurrentUserLanguage\",\"SourceContext\":\"AW.Win32.Utilities.GenericHelper.Helper\",\"VMware.Hub.Logging.Log.Name\":\"DeviceEnrollment\",\"ThreadId\":12,\"ProcessId\":5228,\"ProcessName\":\"TaskScheduler\",\"MachineName\":\"WIN10A12\",\"EnvironmentName\":\"Production\",\"EnvironmentUserName\":\"testlabdomain\\\\SYSTEM\"}"
+      },
+      {
+        "line": "{\"@t\":\"2022-10-23T12:14:04.6299496Z\",\"@mt\":\"Initializing\",\"@l\":\"Debug\",\"SourceContext\":\"AW.Win32.Utilities.AwProxy\",\"ThreadId\":1,\"ProcessId\":7892,\"ProcessName\":\"AWProcessCommands\",\"MachineName\":\"WIN10A12\",\"EnvironmentName\":\"Production\",\"EnvironmentUserName\":\"testlabdomain\\\\SYSTEM\"}"
+      },
+      {
+        "line": "{\"@t\":\"2022-10-23T12:14:05.8487024Z\",\"@mt\":\"User HMAC is null\",\"@l\":\"Warning\",\"SourceContext\":\"AW.Win32.Unified.Handlers.UnifiedHandler\",\"ThreadId\":7,\"ProcessId\":7892,\"ProcessName\":\"AWProcessCommands\",\"MachineName\":\"WIN10A12\",\"EnvironmentName\":\"Production\",\"EnvironmentUserName\":\"testlabdomain\\\\SYSTEM\"}"
+      }
+    ]
+  },
+  "PPKGFinalSummary": {
+    "title": "PPKG Final Summary Log Format",
+    "description": "Format file generated from regex101 entry -- https://regex101.com/r/oNA7Bt/1",
+    "file-pattern": "PPKGFinalSummary.log$",
+    "regex": {
+      "std": {
+        "pattern": "^(?<timestamp>\\d{4}/\\d{2}/\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3})\\s+(?<body>.*)$"
+      }
+    },
+    "timestamp-field": "timestamp",
+    "timestamp-format": [
+      "%Y/%m/%d %H:%M:%S.%L"
+    ],
+    "body-field": "body",
+    "level-field": "level",
+    "level": {
+      "info": "Info",
+      "error": "Error",
+      "warning": "Warning",
+      "debug": "Debug"
+    },
+    "sample": [
+      {
+        "line": "2023/03/01 20:21:34.583\tWIN-UQ11D0KGJAB Info \tWaiting for App Deployment to Begin  "
+      },
+      {
+        "line": "2023/03/01 20:21:34.601\tWIN-UQ11D0KGJAB Info \tInstalling: Workspace One Assist 22.03 (604F2B3E-F9B8-42A7-A1A8-D8969FCB8E6A)  "
+      }    ]
+  },
+  "EventLogsConverted" : {
+        "title" : "Converted Windows Event Logs",
+        "description" : "Converted Windows Event Logs",
+        "json": true,
+        "timestamp-field": "@t",
+        "timestamp-format": ["%Y-%m-%dT%H:%M:%S.%f%Z"],
+        "level-field" : "@l",
+        "body-field" : "@mt",
+        "module-field": "Provider",
+        "file-pattern" : ".*\\.log$",
+        "level" : {
+            "error" : "Error",
+            "warning" : "Warning",
+            "info" : "Info",
+            "debug" : "Debug",
+            "notice" : "Notice"
+        },
+        "value" : {
+            "@t": {
+                "kind": "string"
+            },
+            "Event" : {
+                "kind" : "string"
+            },
+            "@l" : {
+                "kind" : "string"
+            },
+            "EventID" : {
+                "kind" : "string"
+            },
+            "sourceFile" : {
+                "kind" : "string"
+            },
+            "sourceType" : {
+                "kind" : "string"
+            },
+            "Provider" : {
+                "kind" : "string"
+            },
+            "Computer" : {
+                "kind" : "string"
+            },
+            "@mt" : {
+                "kind" : "string"
+            }
+        },
+        "sample": [
+            {
+                "line": "{\"@t\": \"2023-04-08 01:11:00.710\", \"@l\": \"Info\", \"EventID\": \"0\", \"sourceFile\": \"Application_EventLogs.evtx\", \"sourceType\": \"win:evtx\", \"Provider\": \"edgeupdate\", \"Computer\": \"WINDOWS-MJ4GBFS\", \"@mt\": {\"@xmlns\": \"http://schemas.microsoft.com/win/2004/08/events/event\", \"System\": {\"Provider\": {\"@Name\": \"edgeupdate\"}, \"EventID\": {\"@Qualifiers\": \"0\", \"#text\": \"0\"}, \"Version\": \"0\", \"Level\": \"4\", \"Task\": \"0\", \"Opcode\": \"0\", \"Keywords\": \"0x0080000000000000\", \"TimeCreated\": {\"@SystemTime\": \"2023-04-08 01:11:00.710766\"}, \"EventRecordID\": \"571\", \"Correlation\": {\"@ActivityID\": \"\", \"@RelatedActivityID\": \"\"}, \"Execution\": {\"@ProcessID\": \"0\", \"@ThreadID\": \"0\"}, \"Channel\": \"Application\", \"Computer\": \"WINDOWS-MJ4GBFS\", \"Security\": {\"@UserID\": \"\"}}, \"EventData\": {\"Data\": \"<string>Service stopped</string>\", \"Binary\": null}}}"
+            }
+        ]
+    }
+}

@@ -1,0 +1,121 @@
+{
+    "DesiredStateManagementLogs" : {
+        "title" : "DesiredStateManagementLogs API Log",
+        "description" : "DesiredStateManagementLogs API Log",
+        "json": true,
+        "timestamp-field": "date_time",
+        "level-field" : "level",
+        "body-field" : "message",
+        "module-field": "logger",
+        "file-pattern" : ".*\\.log$",
+        "level" : {
+            "error" : "ERROR",
+            "warning" : "WARNING"
+        },
+        "convert-to-local-time" : true,
+        "value" : {
+            "date_time": {
+                "kind": "string"
+            },
+            "machine_name" : {
+                "kind" : "string"
+            },
+            "level" : {
+                "kind" : "string"
+            },
+            "logger" : {
+                "kind" : "string"
+            },
+            "message" : {
+                "kind" : "string"
+            },
+            "exception" : {
+                "kind" : "json"
+            },
+            "correlation_id" : {
+                "kind" : "string"
+            },
+            "service_name" : {
+                "kind" : "string"
+            },
+            "service_version" : {
+                "kind" : "string"
+            },
+            "application_name" : {
+                "kind" : "string"
+            }
+        },
+        "line-format": [
+            {
+              "field": "date_time"
+            },
+            "|",
+            {
+              "field": "level"
+            },
+            "|",
+            {
+              "field": "message"
+            }
+          ]
+    },
+    "ConsulLogs" : {
+        "title" : "Consul Log",
+        "description" : "Consul Log",
+        "json": true,
+        "timestamp-format" : ["%Y-%m-%dT%H:%M:%S.%f%Z"],
+        "timestamp-field": "@timestamp",
+        "level-field" : "@level",
+        "body-field" : "@message",
+        "module-field": "@module",
+        "file-pattern" : "consul.*\\.json$",
+        "level" : {
+            "error" : "error",
+            "warning" : "warn",
+            "info" : "info"
+        },
+        "convert-to-local-time" : true,
+        "value" : {
+            "@level" : {
+                "kind" : "string"
+            },
+            "@message" : {
+                "kind" : "string"
+            },
+            "@module" : {
+                "kind" : "string"
+            },
+            "@timestamp": {
+                "kind": "string"
+            },
+            "service": {
+                "kind": "string"
+            },
+            "check": {
+                "kind": "string"
+            },
+            "error": {
+                "kind": "string"
+            }
+        },
+        "line-format": [
+            {
+              "field": "@timestamp"
+            },
+            "|",
+            {
+              "field": "@level"
+            },
+            "|",
+            {
+              "field": "@message"
+            }
+          ],
+        "sample" : [
+            {
+		    "line": {"@level":"info","@message":"serf: EventMemberLeave: US08PDS1251GD2 10.138.110.234","@module":"agent.client.serf.lan","@timestamp":"2022-10-28T05:17:36.671203+01:00"}
+	    }
+        ]
+
+    }
+}

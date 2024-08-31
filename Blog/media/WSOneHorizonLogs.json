@@ -1,0 +1,87 @@
+{
+   "HorizonCBSLogs" : {
+        "title" : "WSOne CBS Log",
+        "description" : "WSOne CBS Log",
+        "url" : "http://example.com/log-format.html",
+        "regex" : {
+            "basic" : {
+                "pattern" : "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}),\\s+(?<level>\\w+)\\s+(?<module>.*)\\s+(?<body>.*)$"
+            }
+        },
+        "timestamp-field": "timestamp",
+        "timestamp-format" : ["%Y-%m-%d %H:%M:%S"],
+        "body-field" : "body",
+        "level-field" : "level",
+        "level" : {
+            "error" : "ERROR",
+            "warning" : "WARNING"
+        },
+        "module-field" : "module",
+      "convert-to-local-time" : true,
+        "sample" : [
+            {
+		    "line": "2022-11-10 15:34:40, Info                  CBS    Appl: detectParent: parent found: Microsoft-Windows-ServerCore-Package~31bf3856ad364e35~amd64~~10.0.17763.1, state: Installed"
+	    },
+	    {
+            "line" : "2022-11-10 15:34:40, Info                  CBS    Appl:Forcing GE on revision on parent:Microsoft-Windows-Client-Features-Package~31bf3856ad364e35~amd64~~10.0.17763.1"
+	    }
+        ]
+    },
+   "HorizonSVManagerLogs" : {
+        "title" : "WSOne SVManager Log",
+        "description" : "WSOne SVManager Log",
+        "url" : "https://github.com/leonvmw/leonvmw.github.io/tree/main/lnav",
+        "regex" : {
+            "basic" : {
+                "pattern" : "(I,\\s+\\[(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{6})\\s\\#(?<PID>\\d{3,4})\\]\\s+(?<level>\\w+)\\s+--\\s+(?<body>.*))(.|\\n)+?($|(?=I,\\s+\\[\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}.\\d{6}\\s\\#\\d{3,4}\\]))"
+            }
+        },
+        "timestamp-field": "timestamp",
+        "timestamp-format" : ["%Y-%m-%dT%H:%M:%S.%f"],
+        "body-field" : "body",
+        "level-field" : "level",
+        "level" : {
+            "error" : "ERROR",
+            "warning" : "WARNING"
+        },
+        "module-field" : "module",
+      "convert-to-local-time" : true,
+        "sample" : [
+            {
+		    "line": "I, [2022-05-21T04:38:59.480324 #5368]  INFO -- : Process ID \"5368\" running \"C:/Program Files (x86)/CloudVolumes/Manager/vendor/bundle/ruby/2.7.0/bin/rake jobs:work\" ended after 14726 seconds\nC:/Program Files (x86)"
+	    },
+	    {
+            "line" : "I, [2022-05-21T11:55:06.630074 #3492]  INFO -- : Process ID \"3492\" running \"C:/Program Files (x86)/CloudVolumes/Manager/vendor/bundle/ruby/2.7.0/bin/rake jobs:work\" ended after 14524 seconds\nCurrent version: 20220322135437"
+	    }
+        ]
+    },
+  "HorizonVMWMediaProviderLogs" : {
+        "title" : "WSOne VMWMediaProvider Log",
+        "description" : "WSOne VMWMediaProvider Log",
+        "url" : "https://github.com/leonvmw/leonvmw.github.io/tree/main/lnav",
+        "regex" : {
+            "basic" : {
+                "pattern" : "(?<provider>.*)\\[(?<PID>\\d+)\\]:\\s+(?<timestamp>\\w{3} \\d{2} \\d{2}:\\d{2}:\\d{2})\\.\\d{3}\\s+\\[(?<hex>\\w+)\\]\\s+(?<module>.*)\\s+(?<level>\\w+):(?<body>.*)"
+            }
+        },
+        "timestamp-field": "timestamp",
+        "timestamp-format" : ["%b %d %H:%M:%S"],
+        "body-field" : "body",
+        "level-field" : "level",
+        "level" : {
+            "info" : "info",
+            "debug" : "debug"
+        },
+        "module-field" : "module",
+      "convert-to-local-time" : false,
+        "sample" : [
+            {
+		    "line": "VMWMediaProvider[88690]: Nov 08 08:49:15.001 [0x70000b0c3000] VDPAPI info: VDPService_PluginInitWithPath: version 15.0.0.0-20450170 64bit vespa, plugin path /Applications/VMware Horizon Client.app/Contents/Library/pcoip/vchan_plugins/vdpservice/"
+	    },
+	    {
+            "line" : "VMWMediaProvider[88690]: Nov 08 11:55:03.556 [0x112977600] VDPAPI debug: VDPService_PluginExit(): enter - token RPCME"
+	    }
+        ]
+    }
+
+}
