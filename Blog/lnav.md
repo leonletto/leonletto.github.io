@@ -12,13 +12,13 @@ EG. When you find an error message, all the related messages from all logs will 
 
 Here is a demo I have recorded showing how powerful this is when troubleshooting. It's 10 minutes and covers some of the use cases I have found.
 
-[![LNAV Demo](media/LNAVDemoThumbnail.png)](media/LNAVDemo720p.mp4)
+[![LNAV Demo](lnav_media/LNAVDemoThumbnail.png)](lnav_media/LNAVDemo720p.mp4)
 
 ## Quick Install Video
 
 Here is a 5-minute overview of getting it installed on a Mac and using it for the first time.
 
-[![Install Video](media/InstallVideoThumbnail.png)](media/InstallVideo.mp4)
+[![Install Video](lnav_media/InstallVideoThumbnail.png)](lnav_media/InstallVideo.mp4)
 
 ## Running on Windows
 
@@ -30,7 +30,7 @@ NOTE: The version of LNAV in the apt repo for WSL is old, and you should follow 
 
 My parsers don't work on the old version, and you will be frustrated.
 
-[![LNAV on Windows](media/LNAVOnWindowsThumbnail.png)](media/LNAVOnWindows.mp4)
+[![LNAV on Windows](lnav_media/LNAVOnWindowsThumbnail.png)](lnav_media/LNAVOnWindows.mp4)
 
 ## Documentation
 
@@ -42,16 +42,16 @@ My parsers don't work on the old version, and you will be frustrated.
 Use these files to configure LNAV to parse Workspace ONE logs:
 
 1. Support for the JSON formatted Windows hub logs.
-   - [AllWindowsParsers.json](media/AllWindowsParsers.json)
+   - [AllWindowsParsers.json](lnav_media/AllWindowsParsers.json)
 
 2. Support for a couple of Mac system log files that have different timestamps.
-   - [WSOneMacHubLogs.json](media/WSOneMacHubLogs.json)
+   - [WSOneMacHubLogs.json](lnav_media/WSOneMacHubLogs.json)
 
 3. Support for UEM logs from our UEM servers. This one will be updated and expanded over time as changes happen.
-   - [WSOneServerLogsParsers.json](media/WSOneServerLogsParsers.json)
+   - [WSOneServerLogsParsers.json](lnav_media/WSOneServerLogsParsers.json)
 
 4. Support for Horizon Logs (some special timestamps there).
-   - [WSOneHorizonLogs.json](media/WSOneHorizonLogs.json)
+   - [WSOneHorizonLogs.json](lnav_media/WSOneHorizonLogs.json)
 
 Once you have installed LNAV, you can import these files globally like so:
 
