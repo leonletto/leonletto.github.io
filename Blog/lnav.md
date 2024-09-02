@@ -8,6 +8,10 @@ Not sure how I missed this years ago, but this is the best log viewer I have see
 
 EG. When you find an error message, all the related messages from all logs will be nearby and easy to find.
 
+### Related post
+
+[UEM Windows Client Logs - Prepare for LNAV](/Blog/UEM-Windows-Logs-Prepare.html)
+
 ## Demo
 
 Here is a demo I have recorded showing how powerful this is when troubleshooting. It's 10 minutes and covers some of the use cases I have found.
