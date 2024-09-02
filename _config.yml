@@ -1,6 +1,7 @@
 theme: jekyll-theme-cayman
 title: Leon's homepage
 description: Bookmark this to keep an eye on my project updates!
+url: "https://leonletto.github.io"
 
 plugins:
   - jekyll-feed

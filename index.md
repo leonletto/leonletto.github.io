@@ -14,8 +14,6 @@ I work at VMware and I'm a member of the Workspace ONE team.
 
 A collection of Tutorials for setting up a home lab for learning and testing Kubernetes, Docker, and other technologies.
 
-
-
 ### [WSOneLogConverterForLNAV](https://github.com/leonletto/WSOneLogConverterForLNAV)
 
 A handy tool to convert some incompatible logs into a format compatible with the powerful LNAV log file viewer.
