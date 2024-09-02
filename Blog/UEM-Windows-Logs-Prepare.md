@@ -182,4 +182,4 @@ exit 0
 
 ## Using LNAV to view the logs
 
-Please see my other post on [Using LNAV to troubleshoot devices in Workspace ONE](/Blog/lnav.md) for more information on how to use LNAV to view the logs.
+Please see my other post on [Using LNAV to troubleshoot devices in Workspace ONE](/Blog/lnav.html) for more information on how to use LNAV to view the logs.
