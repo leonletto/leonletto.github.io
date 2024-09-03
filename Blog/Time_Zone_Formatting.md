@@ -1,6 +1,8 @@
 Time Zone Formatting
 ====================
 
+_Note: Moved from my old blog site_
+
 I work with a lot of log files and trying to remember the date in UTC ( or others ) and convert in your 
 head gets tiresome when you have logs from different systems that you are trying to correlate. 
 
