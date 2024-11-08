@@ -4,7 +4,7 @@
 
 Workspace ONE UEM is a powerful platform for managing and securing mobile devices, but it also offers a robust API for integrating with other systems. This API can be used to automate workflows, monitor device status, and trigger alerts based on device events. However, managing API calls, security, tokens, and environment variables can be complex and time-consuming. 
 
-This blog post will outline best practices for managing API workflows in Workspace ONE UEM, including how to securely manage API calls, tokens, and environment variables. We will also explore how to use Postman/Bruno and LLMs to assist with development and automation tasks.
+This blog post will outline best practices for managing API workflows in Workspace ONE UEM, including how to securely manage API calls, tokens, and environment variables. We will also explore how to use Postman/Bruno to assist with development and automation tasks.
 
 ## Table of Contents
 
