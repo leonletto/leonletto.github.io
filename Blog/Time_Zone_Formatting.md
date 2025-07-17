@@ -1,5 +1,8 @@
-Time Zone Formatting
-====================
+---
+layout: default
+title: Time Zone Formatting
+---
+# Time Zone Formatting
 
 _Note: Moved from my old blog site_
 

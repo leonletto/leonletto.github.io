@@ -1,3 +1,7 @@
+---
+layout: default
+title: Secure and Fast API Calls with Workspace ONE UEM
+---
 # Secure and Fast API Calls with Workspace ONE UEM
 
 ## Introduction

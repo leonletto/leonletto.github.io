@@ -1,0 +1,8 @@
+# Python Development Server Dependencies for Jekyll Site
+# Install with: pip install -r requirements-dev.txt
+
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+watchdog>=3.0.0
+aiofiles>=23.0.0
+python-multipart>=0.0.6
