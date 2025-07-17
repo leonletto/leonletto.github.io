@@ -192,6 +192,13 @@ You don't need exotic technology:
 2. **Accepting Incomplete Citations**: Don't settle for partial citation coverage. If citations aren't at 100%, reprocess from the beginning. Sometimes LLMs just get it wrong and you need to try again.
 3. **Insufficient Quality Standards**: Implement comprehensive validation and don't compromise on citation completeness for production systems
 
+### Future Enhancements
+
+**Groundedness Evaluation**: One promising enhancement to our citation pipeline would be adding dedicated groundedness evaluation to measure how well generated responses align with retrieved context. Unlike traditional evaluation methods that require reference answers, groundedness evaluation compares the AI-generated response directly against the retrieved documents to assess faithfulness and detect hallucinations. This approach uses LLM-as-judge techniques to evaluate whether the generated insights truly reflect what's contained in the source materials, providing an additional layer of quality assurance that complements our existing semantic similarity validation. By measuring "to what extent does the generated response agree with the retrieved context," groundedness evaluation could help identify subtle cases where citations are technically valid but the interpretation or emphasis in the generated response doesn't accurately represent the source material.
+
+This tutorial from langchain provides a good overview of this: https://docs.smith.langchain.com/evaluation/tutorials/rag
+
+
 ## Conclusion: Building Trust Through Transparency
 
 Implementing a production-ready citation system is challenging but absolutely worth the effort. Our system has enabled increasing trust and adoption with less risk.
