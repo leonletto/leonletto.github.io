@@ -9,7 +9,7 @@ I have started migrating my posts here from my old blog.  I will be adding new p
 ## Posts
 
 ### [Building Production-Ready Citation Systems for LLM Document Analysis](/Blog/how_and_why_citations.md)
-<small style="margin-top: -10px; display: block;">Learn how to build a two-stage citation system that achieves 88-90% accuracy using LLM reasoning combined with embedding-based validation, complete with production deployment strategies and real-world performance metrics.</small>
+<small style="margin-top: -10px; display: block;">Learn how to build a two-stage citation system using LLM reasoning combined with embedding-based validation</small>
 
 ### [Secure and Fast API Calls with Workspace ONE UEM](/Blog/UEM-API-Calling.md)
 <small style="margin-top: -10px; display: block;">Complete guide to implementing secure API workflows with Workspace ONE UEM</small>
