@@ -74,7 +74,7 @@ Cloud Functions has been renamed to Cloud Run functions.
 
 For more information, and to see how to setup, see the Cloud Run functions blog post.
 
-https://cloud.google.com/blog/products/serverless/google-cloud-functions-is-now-cloud-run-functions
+[google-cloud-functions-is-now-cloud-run-functions](https://cloud.google.com/blog/products/serverless/google-cloud-functions-is-now-cloud-run-functions)
 
 Now we'll create the serverless function that processes UEM event notifications and enriches them with detailed device information.
 
