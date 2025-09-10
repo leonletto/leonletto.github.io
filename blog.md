@@ -4,9 +4,12 @@ title: Blog
 ---
 # My Blog
 
-I have started migrating my posts here from my old blog.  I will be adding new posts as I go.
+My blog is a collection of articles and posts related to programming, technology, and other topics I find interesting.
 
 ## Posts
+
+### [Enhance Workspace ONE UEM Integrations with External Services Using Cloud Functions](Blog/UEM-Cloud-Function-Integration.md)
+<small style="margin-top: -10px; display: block;">Learn how to enrich device events with detailed information for downstream processing using cloud functions</small>
 
 ### [Building Production-Ready Citation Systems for LLM Document Analysis](/Blog/how_and_why_citations.md)
 <small style="margin-top: -10px; display: block;">Learn how to build a two-stage citation system using LLM reasoning combined with embedding-based validation</small>
