@@ -145,6 +145,14 @@ class JekyllDevServer:
             """Health check endpoint."""
             return {"status": "ok", "site_built": self.site_dir.exists()}
 
+        @self.app.get("/favicon.ico")
+        async def serve_favicon():
+            """Serve favicon explicitly."""
+            favicon_path = self.site_dir / "favicon.ico"
+            if favicon_path.is_file():
+                return FileResponse(favicon_path, media_type="image/x-icon")
+            raise HTTPException(status_code=404, detail="Favicon not found")
+
         @self.app.get("/{path:path}")
         async def serve_file(path: str):
             """Serve files with GitHub Pages-like behavior."""
