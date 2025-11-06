@@ -8,6 +8,9 @@ My blog is a collection of articles and posts related to programming, technology
 
 ## Posts
 
+### [Why Code-Specialized Models Fail at Long-Context Tasks: A Reality Check](/Blog/Why-Your-Long-Context-AI-Keeps-Forgetting.md)
+<small style="margin-top: -10px; display: block;">Discover why specialized LLM models can lose context in long conversations and how to choose the right model for your task</small>
+
 ### [Enhance Workspace ONE UEM Integrations with External Services Using Cloud Functions](Blog/UEM-Cloud-Function-Integration.md)
 <small style="margin-top: -10px; display: block;">Learn how to enrich device events with detailed information for downstream processing using cloud functions</small>
 
