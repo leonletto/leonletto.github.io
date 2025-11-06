@@ -55,6 +55,8 @@ The general-purpose model? Full attention in every single layer. Complete contex
 
 **Important note**: This isn't just a configuration setting you can change. The `max_window_layers` parameter defines the model's architecture during training—the weights are trained specifically for this layer configuration. You can't edit config.json to "fix" a code model for long-context tasks; you'd need to retrain the model with a different architecture. Research from NVIDIA's [SWAN-GPT paper](https://arxiv.org/abs/2504.08719) demonstrates that different layer types (full attention vs sliding window) learn fundamentally different representations during training, and converting between architectures requires significant continued pre-training.
 
+*Note: You might see `use_sliding_window: false` in some config files—this controls runtime behavior in specific loaders (vLLM, HF Transformers), but the architectural layer configuration is baked into the weights regardless of this flag.*
+
 ## Why This Matters: Sliding Window Attention Explained (Simply)
 
 Think of it this way:
@@ -68,6 +70,8 @@ For code generation, this makes perfect sense. When you're writing a function, y
 But for analyzing a long email thread? You need to integrate information from the beginning ("customer reported login issue on Jan 15") with information from the end ("issue resolved after password reset on Feb 3"). The upper reasoning layers need to see *both* to maintain coherence.
 
 The code-specialized model's architecture is optimized for the wrong task.
+
+**Important caveat**: Even full-attention models aren't perfect at long contexts. They suffer from "lost in the middle" (mid-context amnesia), attention sinks (early tokens hogging attention), and RoPE extrapolation limits beyond training length. But sliding window attention makes these problems *worse* by design—the upper layers literally can't see the full context, regardless of attention distribution issues.
 
 ### The Tradeoff Nobody Tells You About
 
@@ -116,6 +120,11 @@ Not every task needs full attention. Here's what I found through testing:
 - You need to maintain coherence across the full context
 - Information can appear anywhere in the context (like email threads)
 - Accuracy matters more than specialized features
+
+**Practical tips if you're stuck with a mixed-attention model**:
+- Pin critical instructions and key facts at the *start* and *end* of your prompt (mitigates "lost in the middle")
+- Avoid burying important information mid-context
+- If you control inference: test a full-attention variant of the same model family for comparison
 
 ## My Takeaway: Choose Your Tool for the Job
 
