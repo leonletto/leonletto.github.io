@@ -40,22 +40,13 @@ Same base model. Same context window (128K). Completely different results.
 
 After ruling out the obvious culprits (configuration, prompts, tokenization), I dug into the model architecture files.
 
-That's when I found it: **`max_window_layers`**
+That's when I found it: **`max_window_layers` in config.json**
 
 ```
-Qwen3-Coder-30B-A3B-Instruct:     max_window_layers: 28 / 48 layers (58%)
-Qwen3-30B-A3B-Instruct:  max_window_layers: 48 / 48 layers (100%)
+Qwen3-Coder-30B-A3B-Instruct:     max_window_layers: 28 / 48 layers (58%) <-- Sliding window attention in upper layers only
+Qwen3-30B-A3B-Instruct:  max_window_layers: 48 / 48 layers (100%) <-- Full attention in all layers. Complete context visibility throughout.
 ```
-
-The code-specialized model only uses full attention in the first 58% of its layers. The upper layers—the ones doing the most sophisticated reasoning—use sliding window attention with limited context visibility.
-
-The general-purpose model? Full attention in every single layer. Complete context visibility throughout.
-
 **This one architectural difference explained everything.**
-
-**Important note**: This isn't just a configuration setting you can change. The `max_window_layers` parameter defines the model's architecture during training—the weights are trained specifically for this layer configuration. You can't edit config.json to "fix" a code model for long-context tasks; you'd need to retrain the model with a different architecture. Research from NVIDIA's [SWAN-GPT paper](https://arxiv.org/abs/2504.08719) demonstrates that different layer types (full attention vs sliding window) learn fundamentally different representations during training, and converting between architectures requires significant continued pre-training.
-
-*Note: You might see `use_sliding_window: false` in some config files—this controls runtime behavior in specific loaders (vLLM, HF Transformers), but the architectural layer configuration is baked into the weights regardless of this flag.*
 
 ## Why This Matters: Sliding Window Attention Explained (Simply)
 
@@ -69,7 +60,11 @@ For code generation, this makes perfect sense. When you're writing a function, y
 
 But for analyzing a long email thread? You need to integrate information from the beginning ("customer reported login issue on Jan 15") with information from the end ("issue resolved after password reset on Feb 3"). The upper reasoning layers need to see *both* to maintain coherence.
 
-The code-specialized model's architecture is optimized for the wrong task.
+I was trying to use a model optimized for writing code to analyze long email threads.
+
+**Important note**: This isn't just a configuration setting you can change. The `max_window_layers` parameter defines the model's architecture during training—the weights are trained specifically for this layer configuration. You can't edit config.json to "fix" a code model for long-context tasks; you'd need to retrain the model with a different architecture. Research from NVIDIA's [SWAN-GPT paper](https://arxiv.org/abs/2504.08719) demonstrates that different layer types (full attention vs sliding window) learn fundamentally different representations during training, and converting between architectures requires significant continued pre-training.
+
+*Note: You might see `use_sliding_window: false` in some config files—this controls runtime behavior in specific loaders (vLLM, HF Transformers), but the architectural layer configuration is baked into the weights regardless of this flag.*
 
 **Important caveat**: Even full-attention models aren't perfect at long contexts. They suffer from "lost in the middle" (mid-context amnesia), attention sinks (early tokens hogging attention), and RoPE extrapolation limits beyond training length. But sliding window attention makes these problems *worse* by design—the upper layers literally can't see the full context, regardless of attention distribution issues.
 
@@ -136,13 +131,6 @@ Now I run both models:
 
 The overhead of running two models is worth it. Each model does what it's optimized for, and I don't have to compromise on either capability.
 
-For teams choosing models for private inference, here's my advice:
-
-1. **Test with your actual workload** - Synthetic benchmarks won't reveal these issues
-2. **Check the architecture** - Look for `max_window_layers` in config.json
-3. **Don't trust marketing claims** - "128K context" doesn't tell you about attention mechanisms
-4. **Be willing to run multiple models** - Specialization beats generalization at this scale
-
 ## How to Check Your Model
 
 If you're using a model for long-context tasks, here's how to verify it's actually capable:
@@ -202,8 +190,6 @@ This is why understanding these tradeoffs is essential for anyone doing serious 
 5. **For private inference, be strategic.** You can't throw unlimited compute at the problem, so model selection is critical.
 
 ## The Bottom Line
-
-I wanted one model to do everything. That's not realistic for private inference at 30B parameters—not yet.
 
 The lesson: **Choose your model based on architecture and task requirements, not marketing claims.**
 
