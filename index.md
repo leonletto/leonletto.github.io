@@ -4,43 +4,68 @@ title: Home
 ---
 # Home
 
-I'm Leon and I like to write little utilities to help people with tasks related to REST API's and other things.  
+I'm Leon, an AI/ML systems architect specializing in production-scale Generative AI platforms and enterprise solutions. I architect intelligent systems that process thousands of support tickets daily, transforming complex data into actionable business intelligence.
 
-I work at VMware and I'm a member of the Workspace ONE team.
+I work at Omnissa as a Senior Staff Solution Engineer where, in addition to AI/ML work, I work with the Workspace ONE team on enterprise security and mobility solutions.  I work with cutomers to help them use our API's and use code to extend our platform into their business processes and use cases as well as building custom integrations with other systems.
 
-## Projects
+I'm also a home renovation enthusiast and amateur engineer.  I'm always looking for new projects to work on.
 
-### [littlehomelab](https://leonletto.github.io/littlehomelab/)
+## Featured Work
 
-A collection of Tutorials for setting up a home lab for learning and testing Kubernetes, Docker, and other technologies.
+### Recent Blog Posts
+
+- [Why Your AI System Needs Citations](/Blog/how_and_why_citations.html)
+- [Why Code-Specialized Models Fail at Long-Context Tasks - A Reality Check](/Blog/Why-Your-Long-Context-AI-Keeps-Forgetting.html)
+- [Three-Way and Four-Way Switch Wiring Diagrams (with Neutral in Every Box)](/Blog/threeway_and_fourway_switch_diagrams.html)
+
+### Developer Tools & Enterprise Solutions
+
+#### [localhost-app-launcher](https://github.com/leonletto/localhost-app-launcher)
+
+An Application to allow securely launching apps from a web based App Catalog or an agent like Workspace ONE Hub.
 
 ### [WSOneLogConverterForLNAV](https://github.com/leonletto/WSOneLogConverterForLNAV)
 
 A handy tool to convert some incompatible logs into a format compatible with the powerful LNAV log file viewer.
 Designed for use with Workspace ONE windows Log Bundles.
 
-#### Features:
 - Converts out of order logs in case of time changes during deployment
 - Converts Installer logs to a format that LNAV can read
 - Converts Windows Event Logs to a format that LNAV can read
 - Provides parsers for the converted logs
 
+### Open Source Projects
+
+### [bashExportCsv](https://github.com/leonletto/bashExportCsv)
+
+Bash function to export flattened csv files from curl responses or other json.
+
+#### Why is this needed?
+
+If you have large multi-level json that you want to flatten, for exporting to csv for visualization in Spreadsheets or importing into databases, the modules available lack the multi-level functionality which I prefer.  I wrote another project which did this in an Excel Add-on ( using javascript ) but that does not work for the command line.
+
+I found mot of what I needed in jq for flattening json objects and arrays. However, if you try to do the export using jq and bash, the speed suffers immensely and I could only get to 20-30 lines/records per second to export with 500 byte records. This is unusable for large responses from enterprise REST API's with tens ( or hundreds ) of thousands of records per response so getting a spreadsheet out of a REST query would be very slow.
+
+Using [jq](https://stedolan.github.io/jq/download/) and [sqlite-utils]( https://sqlite-utils.datasette.io/en/stable/) together, I was able to go from 20-30 records per second to 2000-3000 records per second which is quite usable.
+
+### [littlehomelab](https://leonletto.github.io/littlehomelab/)
+
+A collection of Tutorials for setting up a home lab for learning and testing Kubernetes, Docker, and other technologies.
+
 ### [ca-for-labs](https://github.com/leonletto/ca-for-labs)
 
 ca-for-labs - formerly littleCa - Create your own CA for your environment and issue and revoke certificates as needed.
-#### Features: 
+
 - Create your own CA for your lab, home network or demo environment
 - Issue server certificates for your environment
 - Creates PEM and PFX certificates
 - Revoke certificates for your environment
 - Create a certificate revocation list (CRL) for your environment
 
-
 ### [bashLogger](https://github.com/leonletto/bashLogger)
 
 logging module for bash scripts
 
-#### Features:
 - This script is used to log messages to the console and to a log file and is designed to be similar the API of the python logging module. It includes log rotation by size and by number of log files.
 - There are a couple of additional functions to show how you could create custom logging functions for yourself.
 - There is a test script that you can run to see how the logging works.
@@ -51,22 +76,8 @@ Comparing integers in bash is included in the base functionality but floating po
 
 By necessity it is opinionated but I hope that it is flexible enough to be useful.
 
-#### Features:
-- I have included 5 helper functions which can be used to compare floating point numbers and version numbers. 
--  The functions are: gt lt ge le and eq.
-
-
-### [bashExportCsv](https://github.com/leonletto/bashExportCsv)
-
-Bash function to export flattened csv files from curl responses or other json.
-
-#### Why is this needed?
-If you have large multi-level json that you want to flatten, for exporting to csv for visualization in Spreadsheets or importing into databases, the modules available lack the multi-level functionality which I prefer.  I wrote another project which did this in an Excel Add-on ( using javascript ) but that does not work for the command line.
-
-I found mot of what I needed in jq for flattening json objects and arrays. However, if you try to do the export using jq and bash, the speed suffers immensely and I could only get to 20-30 lines/records per second to export with 500 byte records. This is unusable for large responses from enterprise REST API's with tens ( or hundreds ) of thousands of records per response so getting a spreadsheet out of a REST query would be very slow. 
-
-Using [jq](https://stedolan.github.io/jq/download/) and [sqlite-utils]( https://sqlite-utils.datasette.io/en/stable/) together, I was able to go from 20-30 records per second to 2000-3000 records per second which is quite usable.
-
+- I have included 5 helper functions which can be used to compare floating point numbers and version numbers.
+- The functions are: gt lt ge le and eq.
 
 ## Contributing
 

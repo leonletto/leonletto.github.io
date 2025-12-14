@@ -6,12 +6,6 @@ title: About
 
 My Name is Leon Letto
 
-linkedIn: [My Profile](https://www.linkedin.com/in/leon-letto-469b4/)
-
-Main blog: [leonletto.com](https://leonletto.com)
-
-I program a lot these days and want to share some of the things I've learned.
+linkedIn: [My Profile](https://www.linkedin.com/in/leonletto/)
 
 I got the top menu from here: [Lavalamp CSS Menu](https://codepen.io/Patak/pen/QpLpOV)
-
-

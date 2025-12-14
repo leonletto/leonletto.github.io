@@ -4,7 +4,7 @@ title: Blog
 ---
 # My Blog
 
-My blog is a collection of articles and posts related to programming, technology, and other topics I find interesting.
+My blog is a collection of articles and posts related to AI, programming, technology, and other topics I find interesting like home renovation.
 
 ## Posts
 
