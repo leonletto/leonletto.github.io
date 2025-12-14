@@ -1,3 +1,18 @@
 .current {
     color: green;
 }
+
+/* Override Cayman theme's fixed max-width */
+/* Make ASCII diagram code blocks wider */
+pre code.language-ascii {
+    display: block;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+/* Increase page width for pages with ASCII diagrams */
+@media screen {
+    .main-content:has(code.language-ascii) {
+        max-width: 75rem !important;
+    }
+}

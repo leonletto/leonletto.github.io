@@ -2,73 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://leonletto.github.io/blog.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/lnav.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/Time_Zone_Formatting.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/how_and_why_citations.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/UEM-API-Calling.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/UEM-Windows-Logs-Prepare.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/Why-Your-Long-Context-AI-Keeps-Forgetting.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/UEM-Cloud-Function-Integration.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://leonletto.github.io/Blog/threeway_and_fourway_switch_diagrams.html</loc>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/README.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/index.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/_site/README.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/about.html</loc>
-    <lastmod>2025-11-06</lastmod>
+    <lastmod>2025-12-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

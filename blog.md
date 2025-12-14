@@ -8,6 +8,9 @@ My blog is a collection of articles and posts related to programming, technology
 
 ## Posts
 
+### [3-Way and 4-Way Switch Wiring Diagrams (with Neutral in Every Box)](/Blog/threeway_and_fourway_switch_diagrams.md)
+<small style="margin-top: -10px; display: block;">Complete NEC-compliant wiring diagrams for 3-way and 4-way switches with neutral in every box for smart-switch compatibility</small>
+
 ### [Why Code-Specialized Models Fail at Long-Context Tasks: A Reality Check](/Blog/Why-Your-Long-Context-AI-Keeps-Forgetting.md)
 <small style="margin-top: -10px; display: block;">Discover why specialized LLM models can lose context in long conversations and how to choose the right model for your task</small>
 
