@@ -44,7 +44,7 @@ I'd already seen what Git-backed persistence did for task tracking with Beads. T
 
 Every developer project already has a Git repository. Git handles authentication, syncing across machines, conflict resolution, and history tracking. It's infrastructure that already exists, already works, and doesn't cost anything extra.
 
-So Thrum stores messages in your Git repo. A background service syncs them automatically. Agents register with a name and role, send messages, check their inbox, and subscribe to topics they care about. All through a simple CLI or through native AI tool integration.
+So Thrum stores messages in your Git repo. A background service syncs them automatically. Agents register with a name and role, send messages, check their inbox and listen for new messages. All through a simple CLI or through native AI tool integration.
 
 ```bash
 thrum init                          # Set up in your repo
