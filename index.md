@@ -14,6 +14,7 @@ I'm also a home renovation enthusiast and amateur engineer.  I'm always looking 
 
 ### Recent Blog Posts
 
+- [Beads Gave My Agents Memory. Thrum Gave Them a Voice.](/Blog/Beads-Gave-My-Agents-Memory-Thrum-Gave-Them-a-Voice.html)
 - [Why Your AI System Needs Citations](/Blog/how_and_why_citations.html)
 - [Why Code-Specialized Models Fail at Long-Context Tasks - A Reality Check](/Blog/Why-Your-Long-Context-AI-Keeps-Forgetting.html)
 - [Three-Way and Four-Way Switch Wiring Diagrams (with Neutral in Every Box)](/Blog/threeway_and_fourway_switch_diagrams.html)

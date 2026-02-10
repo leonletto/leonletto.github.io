@@ -8,6 +8,9 @@ My blog is a collection of articles and posts related to AI, programming, techno
 
 ## Posts
 
+### [Beads Gave My Agents Memory. Thrum Gave Them a Voice.](/Blog/Beads-Gave-My-Agents-Memory-Thrum-Gave-Them-a-Voice.md)
+<small style="margin-top: -10px; display: block;">How I went from being a human message relay between AI agents to running multi-agent workflows with Git-backed coordination</small>
+
 ### [3-Way and 4-Way Switch Wiring Diagrams (with Neutral in Every Box)](/Blog/threeway_and_fourway_switch_diagrams.md)
 <small style="margin-top: -10px; display: block;">Complete NEC-compliant wiring diagrams for 3-way and 4-way switches with neutral in every box for smart-switch compatibility</small>
 

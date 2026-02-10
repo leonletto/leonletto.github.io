@@ -73,7 +73,7 @@ class JekyllDevServer:
         """Check if Jekyll is installed and available."""
         # Set up environment with proper PATH for Jekyll
         env = os.environ.copy()
-        env['PATH'] = '/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.4.0/bin:' + env.get('PATH', '')
+        env['PATH'] = '/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:' + env.get('PATH', '')
 
         try:
             result = subprocess.run(['jekyll', '--version'],
@@ -96,7 +96,7 @@ class JekyllDevServer:
 
         # Set up environment with proper PATH for Jekyll
         env = os.environ.copy()
-        env['PATH'] = '/opt/homebrew/opt/ruby/bin:/opt/homebrew/lib/ruby/gems/3.4.0/bin:' + env.get('PATH', '')
+        env['PATH'] = '/opt/homebrew/opt/ruby@3.3/bin:/opt/homebrew/lib/ruby/gems/3.3.0/bin:' + env.get('PATH', '')
 
         try:
             # Use jekyll build command
