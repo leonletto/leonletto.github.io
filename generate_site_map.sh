@@ -1,16 +1,15 @@
 #!/usr/bin/env bash
-# Generate sitemap.xml containing:
-#   - Pages from this Jekyll site (every .md outside excluded dirs becomes
-#     a .html URL under https://leonletto.github.io/)
-#   - URLs from the Thrum site, read from either:
-#       $THRUM_SITEMAP_LOCAL_PATH (if set and the file exists)
-#       OR fetched live from https://leonletto.github.io/thrum/sitemap.xml
+# Generate sitemap.xml for the personal site only.
 #
-# Why merged: Google rejects submission of the Thrum-specific sitemap or
-# the /thrum/ sub-property. A single sitemap at the site root covers
-# every URL under the leonletto.github.io hostname (which is allowed —
-# sitemaps are scoped to hostname, not path), and the parent property is
-# the only one that needs to be active in Search Console.
+# Includes every .md file in the repo (outside excluded dirs), converted
+# to its rendered .html URL under https://leonletto.github.io/.
+#
+# Previously this script also folded URLs from the Thrum sub-site into
+# the same sitemap, because Search Console refused to verify the /thrum/
+# URL-prefix property. As of 2026-05-16 the Thrum site moved to its own
+# domain (https://thrum.team), so the fold-in is no longer needed:
+# thrum.team has its own Search-Console-verified Domain property and
+# publishes its own sitemap at https://thrum.team/sitemap.xml.
 #
 # Idempotent. Overwrites sitemap.xml on every run.
 
@@ -18,8 +17,6 @@ set -uo pipefail
 
 BASE_URL="https://leonletto.github.io"
 SITEMAP_FILE="sitemap.xml"
-THRUM_SITEMAP_URL="${BASE_URL}/thrum/sitemap.xml"
-THRUM_SOURCE_DESC=""
 
 # Build directory exclusions for find. These never belong in a sitemap:
 # - .git, .venv, __pycache__ — internal
@@ -87,36 +84,8 @@ while IFS= read -r md_file; do
   PERSONAL_COUNT=$((PERSONAL_COUNT + 1))
 done < <(find . -type f -name '*.md' "${FIND_EXCLUDES[@]}" | sort)
 
-# ── Thrum site URLs ───────────────────────────────────────────────────
-THRUM_XML=""
-if [[ -n "${THRUM_SITEMAP_LOCAL_PATH:-}" && -f "${THRUM_SITEMAP_LOCAL_PATH}" ]]; then
-  THRUM_XML=$(cat "${THRUM_SITEMAP_LOCAL_PATH}")
-  THRUM_SOURCE_DESC="local: ${THRUM_SITEMAP_LOCAL_PATH}"
-elif command -v curl >/dev/null && curl -sf -m 10 "${THRUM_SITEMAP_URL}" -o "/tmp/thrum-sitemap-$$.xml"; then
-  THRUM_XML=$(cat "/tmp/thrum-sitemap-$$.xml")
-  rm -f "/tmp/thrum-sitemap-$$.xml"
-  THRUM_SOURCE_DESC="live: ${THRUM_SITEMAP_URL}"
-else
-  echo "WARNING: Could not source Thrum sitemap; output will not include Thrum URLs." >&2
-fi
-
-THRUM_COUNT=0
-if [[ -n "${THRUM_XML}" ]]; then
-  # Extract every <url>...</url> block and append to our sitemap.
-  # The Thrum sitemap formats one tag per line so AWK range matching works.
-  THRUM_BLOCKS=$(echo "${THRUM_XML}" | awk '/<url>/,/<\/url>/')
-  echo "${THRUM_BLOCKS}" >> "${SITEMAP_FILE}"
-  THRUM_COUNT=$(echo "${THRUM_BLOCKS}" | grep -c '<url>' || true)
-fi
-
 echo '</urlset>' >> "${SITEMAP_FILE}"
 
 # ── Report ────────────────────────────────────────────────────────────
 echo "Sitemap generated at ${SITEMAP_FILE}"
 echo "  Personal-site URLs: ${PERSONAL_COUNT}"
-if [[ -n "${THRUM_SOURCE_DESC}" ]]; then
-  echo "  Thrum URLs:         ${THRUM_COUNT} (source: ${THRUM_SOURCE_DESC})"
-else
-  echo "  Thrum URLs:         0 (sitemap source unavailable — Thrum URLs missing)"
-fi
-echo "  Total URLs:         $((PERSONAL_COUNT + THRUM_COUNT))"
