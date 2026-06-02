@@ -10,10 +10,15 @@ I work at Omnissa as a Senior Staff Solution Engineer where, in addition to AI/M
 
 I'm also a home renovation enthusiast and amateur engineer.  I'm always looking for new projects to work on.
 
+## Thrum
+
+Most of my building energy these days goes into [**Thrum**](https://thrum.team) — a platform for coordinating teams of AI coding agents while keeping the plan in human hands. The docs, the thinking behind it, and the project's own blog all live at [thrum.team](https://thrum.team).
+
 ## Featured Work
 
 ### Recent Blog Posts
 
+- [When "Sparse Attention" Actually Works](/Blog/When-Sparse-Attention-Actually-Works.html)
 - [Beads Gave My Agents Memory. Thrum Gave Them a Voice.](/Blog/Beads-Gave-My-Agents-Memory-Thrum-Gave-Them-a-Voice.html)
 - [Why Your AI System Needs Citations](/Blog/how_and_why_citations.html)
 - [Why Code-Specialized Models Fail at Long-Context Tasks - A Reality Check](/Blog/Why-Your-Long-Context-AI-Keeps-Forgetting.html)

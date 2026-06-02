@@ -2,73 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://leonletto.github.io/about.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/blog.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/Beads-Gave-My-Agents-Memory-Thrum-Gave-Them-a-Voice.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/how_and_why_citations.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/lnav.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/threeway_and_fourway_switch_diagrams.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/Time_Zone_Formatting.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/UEM-API-Calling.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/UEM-Cloud-Function-Integration.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/UEM-Windows-Logs-Prepare.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://leonletto.github.io/Blog/When-Sparse-Attention-Actually-Works.html</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/Blog/Why-Your-Long-Context-AI-Keeps-Forgetting.html</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leonletto.github.io/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

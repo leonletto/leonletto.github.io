@@ -23,6 +23,8 @@ SITEMAP_FILE="sitemap.xml"
 # - _site, _layouts, _includes, _data — Jekyll machinery (templates, build out)
 # - node_modules — JS deps if any
 # - .jekyll-cache — Jekyll build cache
+# - .thrum, .claude — agent coordination/config; dot-dirs Jekyll never builds,
+#   so their .md files would be 404s if listed here
 FIND_EXCLUDES=(
   -not -path './.git/*'
   -not -path './.venv/*'
@@ -34,6 +36,8 @@ FIND_EXCLUDES=(
   -not -path './node_modules/*'
   -not -path './.jekyll-cache/*'
   -not -path './.idea/*'
+  -not -path './.thrum/*'
+  -not -path './.claude/*'
   -not -name 'README.md'
 )
 

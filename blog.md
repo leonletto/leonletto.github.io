@@ -6,7 +6,12 @@ title: Blog
 
 My blog is a collection of articles and posts related to AI, programming, technology, and other topics I find interesting like home renovation.
 
+**Looking for my writing on Thrum?** My posts about [Thrum](https://thrum.team) — the multi-agent coordination tool I built — now live on the project's own site: [thrum.team/blog](https://thrum.team/blog).
+
 ## Posts
+
+### [When "Sparse Attention" Actually Works](/Blog/When-Sparse-Attention-Actually-Works.md)
+<small style="margin-top: -10px; display: block;">A long-context follow-up: why a hybrid linear/full-attention model sharpens citations — and fits the full 256K window on one GPU where a dense MoE can't</small>
 
 ### [Beads Gave My Agents Memory. Thrum Gave Them a Voice.](/Blog/Beads-Gave-My-Agents-Memory-Thrum-Gave-Them-a-Voice.md)
 <small style="margin-top: -10px; display: block;">How I went from being a human message relay between AI agents to running multi-agent workflows with Git-backed coordination</small>
